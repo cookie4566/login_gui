@@ -1,26 +1,44 @@
+from email import message
 from tkinter import *
-from tkinter import ttk
+from tkinter import ttk, messagebox
 
-# function for saving login info
+class Login_window():
+    def __init__(self,master):
+        frame = ttk.Frame(master, padding = 10)
+        frame.grid()
+        #labels for username and password
+        ttk.Label(frame, text="Username").grid(column=0, row=0)
+        ttk.Label(frame, text="Password").grid(column=0, row=1)
+
+        #buttons
+        Q_button = ttk.Button(frame, text="quit",command=master.destroy).grid(column=1, row=2)
+        S_button = ttk.Button(frame, text="Sign Up").grid(column=2, row=2)
+        L_button = ttk.Button(frame, text="Log In",command=troll).grid(column=0, row=2)
+
+        #entry fields
+        Username_text = Entry(frame).grid(column=1, row=0)
+        password_text = Entry(frame).grid(column=1, row=1)
+
 
 # function for signing up
+# def sign_up():
+def troll():
+    messagebox.showerror("Go fuck Yourself!", "You thought stank ass bitch")
+
+
+
+
+
+
 
 # Window for login information
-window = Tk()
-frame = ttk.Frame(window, padding = 5)
-frame.grid()
+root = Tk()
+root.title("Log-In")
+window = Login_window(root)
+root.mainloop()
 
-#labels for username and password
-ttk.Label(frame, text="Username").grid(column=0, row=0)
-ttk.Label(frame, text="Password").grid(column=0, row=1)
 
-#text fields for username and passwords
-ttk.Entry(frame).grid(column=1, row=0)
-ttk.Entry(frame).grid(column=1, row=1)
 
-#exit button
-ttk.Button(frame, text="quit",command=window.destroy).grid(column=1, row=2)
-ttk.Button(frame, text="Sign Up").grid(column=2, row=2)
-ttk.Button(frame, text="Log In",command=window.destroy).grid(column=0, row=2)
 
-window.mainloop()
+
+
