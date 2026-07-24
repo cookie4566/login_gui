@@ -12,18 +12,20 @@ class Login_window():
 
         #buttons
         Q_button = ttk.Button(frame, text="quit",command=master.destroy).grid(column=1, row=2)
-        S_button = ttk.Button(frame, text="Sign Up").grid(column=2, row=2)
-        L_button = ttk.Button(frame, text="Log In",command=troll).grid(column=0, row=2)
+        S_button = ttk.Button(frame, text="Sign Up", command = sign_up).grid(column=2, row=2)
+        L_button = ttk.Button(frame, text="Log In",command=sign_up).grid(column=0, row=2)
 
         #entry fields
         Username_text = Entry(frame).grid(column=1, row=0)
         password_text = Entry(frame).grid(column=1, row=1)
 
+    #function for collecting user and pass word
+
 
 # function for signing up
 # def sign_up():
-def troll():
-    messagebox.showerror("Go fuck Yourself!", "You thought stank ass bitch")
+def sign_up():
+    messagebox.showerror("OOPS!", "You thought!")
 
 
 
